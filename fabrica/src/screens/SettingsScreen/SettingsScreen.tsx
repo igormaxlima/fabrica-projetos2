@@ -1,14 +1,19 @@
 import React from 'react'
 import { StyleSheet, Text, View, Button } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
+import Map from '../../components/Map'
+import { MOCK_DEFENSORIAS } from '../../types/defensoriasLocation'
 
 function SettingsScreen() {
   const navigation = useNavigation()
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hello Home Settings Screen</Text>
-      <Button title="Go Back to Home" />
+      <Map
+        initialRegion={MOCK_DEFENSORIAS[0]}
+        markers={MOCK_DEFENSORIAS}
+        focusButtonName={'Defensoria'}
+      />
     </View>
   )
 }
