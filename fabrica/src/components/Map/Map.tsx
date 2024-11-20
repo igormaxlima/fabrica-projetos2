@@ -7,8 +7,8 @@ import FocusButton from './components/FocusButton'
 import CalloutComponent from './components/CalloutComponent'
 
 export interface MarkerData {
-  name: string
-  address: string
+  name?: string
+  address?: string
   latitude: number
   longitude: number
   latitudeDelta: number
@@ -34,10 +34,11 @@ const Map = ({ initialRegion, markers, focusButtonName }: MapProps) => {
   }, [])
 
   const focusMap = () => {
-    mapRef.current?.animateCamera(
-      { center: initialRegion, zoom: 10 },
-      { duration: 3000 }
-    )
+    // mapRef.current?.animateCamera(
+    //   { center: initialRegion, zoom: 10 },
+    //   { duration: 3000 }
+    // )
+    mapRef.current?.animateToRegion(initialRegion, 3000)
   }
 
   return (

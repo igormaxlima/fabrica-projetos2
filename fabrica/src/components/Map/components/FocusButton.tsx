@@ -9,7 +9,7 @@ interface FocusButtonProps {
 const FocusButton = ({ buttonName, onPress }: FocusButtonProps) => (
   <TouchableOpacity onPress={onPress}>
     <View style={styles.button}>
-      <Text>{buttonName}</Text>
+      <Text style={styles.buttonText}>{buttonName}</Text>
     </View>
   </TouchableOpacity>
 )
@@ -17,6 +17,12 @@ const FocusButton = ({ buttonName, onPress }: FocusButtonProps) => (
 const styles = StyleSheet.create({
   button: {
     padding: 10,
+    paddingBottom: 15,
+  },
+  buttonText: {
+    fontSize: 20,
+    color: '#FFFFFF',
+    fontWeight: '600',
   },
 })
 

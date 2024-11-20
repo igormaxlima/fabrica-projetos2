@@ -33,7 +33,7 @@ function HomeScreen() {
           <Card
             title={'Defensorias perto de mim'}
             icon={<Ionicons name="location-outline" size={32} color="black" />}
-            destination={'Settings'}
+            destination={'LocationsNear'}
           />
 
           <Card
