@@ -43,11 +43,11 @@ function HomeScreen() {
           />
 
           <Card
-            title={'Documentação Necessária'}
+            title={'Chat'}
             icon={
               <Ionicons name="document-text-outline" size={32} color="black" />
             }
-            destination={'Settings'}
+            destination={'Chat'}
           />
 
           <Card
@@ -55,7 +55,7 @@ function HomeScreen() {
             icon={
               <Ionicons name="document-text-outline" size={32} color="black" />
             }
-            destination={'Settings'}
+            destination={'Documents'}
           />
 
           <Contacts />

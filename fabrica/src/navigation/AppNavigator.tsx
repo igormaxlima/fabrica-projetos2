@@ -2,12 +2,20 @@ import React, { Suspense, lazy } from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { Text } from 'react-native'
-import { HomeScreen, LocationsNearScreen, SettingsScreen } from '../screens'
+import {
+  ChatScreen,
+  DocumentsScreen,
+  HomeScreen,
+  LocationsNearScreen,
+  SettingsScreen,
+} from '../screens'
 
 export type RootStackParamList = {
   Home: undefined
   Settings: undefined
   LocationsNear: undefined
+  Chat: undefined
+  Documents: undefined
 }
 
 const Stack = createNativeStackNavigator()
@@ -34,6 +42,28 @@ function AppNavigator() {
             headerStyle: { backgroundColor: '#006842' },
             headerTintColor: '#FFFFFF',
             headerBackTitleVisible: false,
+            headerShadowVisible: true,
+          }}
+        />
+        <Stack.Screen
+          name="Documents"
+          component={DocumentsScreen}
+          options={{
+            headerTitle: 'Documentos Necessários',
+            headerStyle: { backgroundColor: '#006842' },
+            headerTintColor: '#FFFFFF',
+            headerBackTitleVisible: false,
+            headerShadowVisible: true,
+          }}
+        />
+        <Stack.Screen
+          name="Chat"
+          component={ChatScreen}
+          options={{
+            headerTitle: 'Conversa com Bot',
+            headerStyle: { backgroundColor: '#006842' },
+            headerTintColor: '#FFFFFF',
+            // headerBackTitleVisible: false,
             headerShadowVisible: true,
           }}
         />
