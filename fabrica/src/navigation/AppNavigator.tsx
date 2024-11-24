@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { Text } from 'react-native'
 import {
   ChatScreen,
+  DefensoriasLocationInfoScreen,
   DocumentsScreen,
   HomeScreen,
   LocationsNearScreen,
@@ -16,6 +17,7 @@ export type RootStackParamList = {
   LocationsNear: undefined
   Chat: undefined
   Documents: undefined
+  DefensoriasLocationInfo: undefined
 }
 
 const Stack = createNativeStackNavigator()
@@ -56,6 +58,19 @@ function AppNavigator() {
             headerShadowVisible: true,
           }}
         />
+
+        <Stack.Screen
+          name="DefensoriasLocationInfo"
+          component={DefensoriasLocationInfoScreen}
+          options={{
+            headerTitle: 'Defensorias',
+            headerStyle: { backgroundColor: '#006842' },
+            headerTintColor: '#FFFFFF',
+            headerBackTitleVisible: false,
+            headerShadowVisible: true,
+          }}
+        />
+
         <Stack.Screen
           name="Chat"
           component={ChatScreen}

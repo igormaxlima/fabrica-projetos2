@@ -10,6 +10,12 @@ export interface Defensorias {
   longitude: number;
   latitudeDelta: number;
   longitudeDelta: number;
+  hour: string;
+  phone: string;
+  openingHour: string;
+  administrativeSupport?: string;
+  email?: string;
+  coordenator: string;
   services?: Servicos[];
 }
 
@@ -38,7 +44,12 @@ export const MOCK_DEFENSORIAS: Defensorias[] = [
         name: "Pedido de Tutela",
         documents: ["Documentos pessoais do requerente", "Relatório médico", "Comprovante de residência"]
       }
-    ]
+    ],
+    hour: "de segunda a sexta-feira, das 12h às 19h (dias úteis)",
+    phone: "129 ou (61) 3465-8200",
+    openingHour: "de segunda a sexta-feira, das 12h às 19h (dias úteis)",
+    administrativeSupport: "(61) 2196-4466",
+    coordenator: "Defensor Público Sérgio Murillo Freitas de Paula",
   },
   {
     name : "Defensoria Pública do DF - Recanto das Emas",
@@ -56,7 +67,13 @@ export const MOCK_DEFENSORIAS: Defensorias[] = [
         name: "Ação de Alimentos",
         documents: ["Certidão de nascimento do filho", "Comprovante de rendimentos do alimentante", "Comprovante de residência"]
       }
-    ]
+    ],
+    hour: "de segunda a sexta-feira, das 13h às 18h (dias úteis)",
+    phone: "129 ou (61) 3465-8200",
+    openingHour: "de segunda a sexta-feira, das 12h às 19h (dias úteis)",
+    administrativeSupport: "(61) 2196-4470",
+    email: "najrecantodasemas@defensoria.df.gov.br",
+    coordenator: "Defensor Público Daniel Mesquita dos Santos",
   },
   {
     name : "Defensoria Pública do DF - Samambaia",
@@ -70,7 +87,12 @@ export const MOCK_DEFENSORIAS: Defensorias[] = [
         name: "Ação de Guarda",
         documents: ["Certidão de nascimento do filho", "Comprovante de residência", "Documentos pessoais dos pais"]
       }
-    ]
+    ],
+    hour: "de segunda a sexta-feira, das 8h às 13h (dias úteis)",
+    phone: "129 ou (61) 3465-8200",
+    openingHour: "de segunda a sexta-feira, das 12h às 19h (dias úteis)",
+    email: "najsamambaia@defensoria.df.gov.br",
+    coordenator: "Defensora Pública Karen Bezerra Rocha de Aguiar",
   },
   {
     name : "Defensoria Pública do DF - Águas Claras & Vicente Pires",
@@ -84,7 +106,13 @@ export const MOCK_DEFENSORIAS: Defensorias[] = [
         name: "Pedido de Tutela",
         documents: ["Documentos pessoais do requerente", "Relatório médico", "Comprovante de residência"]
       }
-    ]
+    ],
+    hour: "de segunda a sexta-feira, das 13h às 18h (dias úteis)",
+    phone: "129 ou (61) 3465-8200",
+    openingHour: "de segunda a sexta-feira, das 12h às 19h (dias úteis)",
+    administrativeSupport: "(61) 2196-4475 (apenas ligações telefônicas)",
+    email: "najaguasclaras@defensoria.df.gov.br",
+    coordenator: "Defensor Público Renê Edney Soares Loureiro",
   },
   {
     name : "Defensoria Pública do DF - Taguatinga",
@@ -98,7 +126,12 @@ export const MOCK_DEFENSORIAS: Defensorias[] = [
         name: "Ação de Alimentos",
         documents: ["Certidão de nascimento do filho", "Comprovante de rendimentos do alimentante", "Comprovante de residência"]
       }
-    ]
+    ],
+    hour: "de segunda a sexta-feira, das 7h30 às 12h (dias úteis)",
+    phone: "129 ou (61) 3465-8200",
+    openingHour: "de segunda a sexta-feira, das 12h às 19h (dias úteis)",
+    email: "najtaguatinga@defensoria.df.gov.br",
+    coordenator: "Defensor Público Henrique Silva Marques",
   },
   {
     name : "Defensoria Pública do DF - Paranoá e Itapoã",
@@ -112,7 +145,13 @@ export const MOCK_DEFENSORIAS: Defensorias[] = [
         name: "Ação de Divórcio",
         documents: ["Certidão de casamento", "Documentos pessoais do cônjuge", "Comprovante de residência"]
       }
-    ]
+    ],
+    hour: "de segunda a sexta-feira, das 12h às 18h (dias úteis)",
+    phone: "129 ou (61) 3465-8200",
+    openingHour: "de segunda a sexta-feira, das 9h às 12h25 e das 13h15 às 16h55 (dias úteis)",
+    email: "najitapoavd@gmail.com",
+    administrativeSupport: "(61) 2196-4471",
+    coordenator: "Defensor Público Leonardo Corrêa dos Santos",
   },
   {
     name : "Defensoria Pública do DF - Riacho Fundo",
@@ -126,7 +165,13 @@ export const MOCK_DEFENSORIAS: Defensorias[] = [
         name: "Pedido de Tutela",
         documents: ["Documentos pessoais do requerente", "Relatório médico", "Comprovante de residência"]
       }
-    ]
+    ],
+    hour: "de segunda a sexta-feira, das 12h às 19h (dias úteis)",
+    phone: "129 ou (61) 3465-8200",
+    openingHour: "de segunda a sexta-feira, das 9h às 12h25 e das 13h15 às 16h55 (dias úteis)",
+    email: "najriachofundo1@gmail.com",
+    administrativeSupport: "(61) 2196-4596",
+    coordenator: "Defensora Pública Lídia Leite Aragão Marangon",
   },
 	{
     name: "Defensoria Pública do DF - Juizados Especiais de Brasília",
@@ -144,7 +189,12 @@ export const MOCK_DEFENSORIAS: Defensorias[] = [
         name: "Ação Cívil Pública",
         documents: ["Documento do autor", "Sentença anterior", "Provas anexas"]
       }
-    ]
+    ],
+    hour: "de segunda a sexta-feira, das 12h às 19h (dias úteis).",
+    phone: "129 ou (61) 3465-8200",
+    openingHour: "de segunda a sexta-feira, das 12h às 18h (dias úteis)",
+    email: "najjuizad@defensoria.df.gov.br",
+    coordenator: "Defensora Pública Patrícia Albuquerque Tavares",
   },
   {
     name: "Defensoria Pública do DF - Brazlândia",
@@ -162,7 +212,13 @@ export const MOCK_DEFENSORIAS: Defensorias[] = [
         name: "Ação Cívil Pública",
         documents: ["Comprovante de residência", "Documentos relacionados ao caso"]
       }
-    ]
+    ],
+    hour: "de segunda a sexta-feira, das 8h às 13h (dias úteis)",
+    phone: "129 ou (61) 3465-8200",
+    openingHour: "e segunda a sexta-feira, das 9h às 12h25 e das 13h15 às 16h55 (dias úteis)",
+    administrativeSupport: "(61) 2196-4444",
+    email: "najbrazlandia@defensoria.df.gov.br",
+    coordenator: "Defensor Público Thiago Ribeiro Deienno",
   },
   {
     name: "Defensoria Pública do DF - Gama",
@@ -180,7 +236,11 @@ export const MOCK_DEFENSORIAS: Defensorias[] = [
         name: "Defesa Criminal",
         documents: ["Documento pessoal", "Relatório do caso", "Provas anexas"]
       }
-    ]
+    ],
+    hour: "de segunda a sexta-feira, das 8h às 19h (dias úteis)",
+    phone: "129 ou (61) 3465-8200",
+    openingHour: "de segunda a sexta-feira, das 12h às 19h (dias úteis)",
+    coordenator: "Defensor Público Roberto Oliveira Coimbra",
   },
   {
     name: "Defensoria Pública do DF - Câmara Legislativa do DF",
@@ -194,7 +254,12 @@ export const MOCK_DEFENSORIAS: Defensorias[] = [
         name: "Ação de Usucapião",
         documents: ["Documento pessoal", "Requerimento formal", "Documentos anexos"]
       }
-    ]
+    ],
+    hour: "de segunda a sexta-feira, das 8h às 18h (dias úteis)",
+    phone: "129 ou (61) 3465-8200",
+    openingHour: "de segunda a sexta-feira, das 9h às 12h25 e das 13h15 às 16h55 (dias úteis)",
+    administrativeSupport: "(61) 3348-8769",
+    coordenator: "Defensor Público Rodrigo Duzsinski",
   },
   {
     name: "Defensoria Pública do DF - São Sebastião",
@@ -208,7 +273,12 @@ export const MOCK_DEFENSORIAS: Defensorias[] = [
         name: "Defesa Criminal",
         documents: ["Certidão de nascimento", "Comprovante de residência", "Documentos pessoais"]
       }
-    ]
+    ],
+    hour: "de segunda a sexta-feira, das 8h às 13h (dias úteis)",
+    phone: "129 ou (61) 3465-8200",
+    openingHour: "e segunda a sexta-feira, das 9h às 12h25 e das 13h15 às 16h55 (dias úteis)",
+    email: "najsaosebastiao@defensoria.df.gov.br",
+    coordenator: "Defensora Pública Keity Satiko F. M. Freire",
   },
   {
     name: "Defensoria Pública do DF - Sobradinho",
@@ -222,7 +292,12 @@ export const MOCK_DEFENSORIAS: Defensorias[] = [
         name: "Defesa Criminal",
         documents: ["Documento pessoal", "Relatório do caso", "Provas anexas"]
       }
-    ]
+    ],
+    hour: "de segunda a sexta-feira, das 8h às 12h (dias úteis)",
+    phone: "129 ou (61) 3465-8200",
+    openingHour: "e segunda a sexta-feira, das 9h às 12h25 e das 13h15 às 16h55 (dias úteis)",
+    email: "najsaosebastiao@defensoria.df.gov.br",
+    coordenator: "Defensor Público Vinícius Fernando dos Reis Santos",
   },
 	{
     name: "Defensoria Pública do DF - Iniciais de Brasília",
@@ -240,7 +315,11 @@ export const MOCK_DEFENSORIAS: Defensorias[] = [
         name: "Ação de Alimentos",
         documents: ["Certidão de nascimento do filho", "Comprovante de rendimentos do alimentante", "Comprovante de residência"]
       }
-    ]
+    ],
+    hour: "de segunda a sexta-feira, das 8h às 13h (dias úteis)",
+    phone: "129 ou (61) 3465-8200",
+    openingHour: "de segunda a sexta-feira, das 12h às 18h (dias úteis)",
+    coordenator: "Defensor Público Márcio Del Fiore",
   },
   {
     name: "Defensoria Pública do DF - Ceilândia",
@@ -258,7 +337,13 @@ export const MOCK_DEFENSORIAS: Defensorias[] = [
         name: "Pedido de Tutela",
         documents: ["Documentos pessoais do requerente", "Relatório médico", "Comprovante de residência"]
       }
-    ]
+    ],
+    hour: "de segunda a sexta-feira, das 12h00 às 17h00 (dias úteis)",
+    phone: "129 ou (61) 3465-8200",
+    openingHour: "de segunda a sexta-feira, das 12h às 18h (dias úteis)",
+    administrativeSupport: "(61) 2196-4452",
+    email: "najceilandia@defensoria.df.gov.br",
+    coordenator: "Defensora Pública Andreia Susi Leardini",
   },
   {
     name: "Defensoria Pública do DF - Guará",
@@ -276,7 +361,11 @@ export const MOCK_DEFENSORIAS: Defensorias[] = [
         name: "Ação de Alimentos",
         documents: ["Certidão de nascimento do filho", "Comprovante de rendimentos do alimentante", "Comprovante de residência"]
       }
-    ]
+    ],
+    hour: "de segunda a sexta-feira, das 12h às 18h (dias úteis)",
+    phone: "129 ou (61) 3465-8200",
+    openingHour: "de segunda a sexta-feira, das 12h às 19h (dias úteis)",
+    coordenator: "Defensora Pública Valdileuza Campelo Pinheiro",
   },
   {
     name: "Defensoria Pública do DF - Brasília (Cível e Criminal)",
@@ -294,7 +383,13 @@ export const MOCK_DEFENSORIAS: Defensorias[] = [
         name: "Ação de Guarda",
         documents: ["Certidão de nascimento do filho", "Comprovante de residência", "Documentos pessoais dos pais"]
       }
-    ]
+    ],
+    hour: "de segunda a sexta-feira, das 12h às 18h (dias úteis)",
+    phone: "129 ou (61) 3465-8200",
+    openingHour: "de segunda a sexta-feira, das 9h às 12h25 e das 13h15 às 16h55 (dias úteis)",
+    administrativeSupport: "(61) 2196-4605",
+    email: "najbrasilia@defensoria.df.gov.br",
+    coordenator: "Defensora Pública Cláudia Ribeiro Galdino Navarro",
   },
   {
     name: "Defensoria Pública do DF - Planaltina",
@@ -312,7 +407,13 @@ export const MOCK_DEFENSORIAS: Defensorias[] = [
         name: "Pedido de Tutela",
         documents: ["Documentos pessoais do requerente", "Relatório médico", "Comprovante de residência"]
       }
-    ]
+    ],
+    hour: "de segunda a sexta-feira, das 8h às 13h (dias úteis)",
+    phone: "129 ou (61) 3465-8200",
+    openingHour: "de segunda a sexta-feira, das 9h às 12h25 e das 13h15 às 16h55 (dias úteis)",
+    administrativeSupport: "(61) 2169-4534",
+    email: "najplanaltina@defensoria.df.gov.br",
+    coordenator: "Defensor Público Dorcas Fonseca de Carvalho Guimarães",
   },
   {
     name: "Defensoria Pública do DF - Bandeirante",
@@ -330,7 +431,13 @@ export const MOCK_DEFENSORIAS: Defensorias[] = [
         name: "Ação de Guarda",
         documents: ["Certidão de nascimento do filho", "Comprovante de residência", "Documentos pessoais dos pais"]
       }
-    ]
+    ],
+    hour: "de segunda a sexta-feira, das 12h às 19h (dias úteis)",
+    phone: "129 ou (61) 3465-8200",
+    openingHour: "de segunda a sexta-feira, das 9h às 12h25 e das 13h15 às 16h55 (dias úteis)",
+    administrativeSupport: "(61) 2196-4475 (apenas ligações telefônicas)",
+    email: "najaguasclaras@defensoria.df.gov.br",
+    coordenator: "Defensor Público Guilherme Magalhães Coutinho",
   },
   {
     name: "Defensoria Pública do DF - Santa Maria",
@@ -348,7 +455,12 @@ export const MOCK_DEFENSORIAS: Defensorias[] = [
         name: "Ação de Alimentos",
         documents: ["Certidão de nascimento do filho", "Comprovante de rendimentos do alimentante", "Comprovante de residência"]
       }
-    ]
+    ],
+    hour: "de segunda a sexta-feira, das 7h às 12h (dias úteis)",
+    phone: "129 ou (61) 3465-8200",
+    openingHour: "de segunda a sexta-feira, das 9h às 12h25 e das 13h15 às 16h55 (dias úteis)",
+    administrativeSupport: "(61) 2196-4547",
+    coordenator: "Defensor Público Luiz Marcelo Dias Martins",
   }
 ]
 

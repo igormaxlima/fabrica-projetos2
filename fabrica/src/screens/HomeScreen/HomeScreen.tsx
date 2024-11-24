@@ -31,9 +31,9 @@ function HomeScreen() {
           </View>
 
           <Card
-            title={'Defensorias perto de mim'}
-            icon={<Ionicons name="location-outline" size={32} color="black" />}
-            destination={'LocationsNear'}
+            title={'Detalhes sobre as Defensorias'}
+            icon={<Ionicons name="school-outline" size={32} color="black" />}
+            destination={'DefensoriasLocationInfo'}
           />
 
           <Card
@@ -43,11 +43,9 @@ function HomeScreen() {
           />
 
           <Card
-            title={'Chat'}
-            icon={
-              <Ionicons name="document-text-outline" size={32} color="black" />
-            }
-            destination={'Chat'}
+            title={'Defensorias perto de mim'}
+            icon={<Ionicons name="location-outline" size={32} color="black" />}
+            destination={'LocationsNear'}
           />
 
           <Card

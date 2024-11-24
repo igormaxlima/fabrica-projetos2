@@ -18,20 +18,22 @@ export interface MarkerData {
 interface MapProps {
   initialRegion: MarkerData
   markers: MarkerData[]
-  focusButtonName: string
+  focusButtonName?: string
 }
 
 const Map = ({ initialRegion, markers, focusButtonName }: MapProps) => {
   const mapRef = useRef<MapView | null>(null)
   const navigation = useNavigation()
 
-  useEffect(() => {
-    navigation.setOptions({
-      headerRight: () => (
-        <FocusButton onPress={focusMap} buttonName={focusButtonName} />
-      ),
-    })
-  }, [])
+  if (focusButtonName) {
+    useEffect(() => {
+      navigation.setOptions({
+        headerRight: () => (
+          <FocusButton onPress={focusMap} buttonName={focusButtonName} />
+        ),
+      })
+    }, [])
+  }
 
   const focusMap = () => {
     // mapRef.current?.animateCamera(
