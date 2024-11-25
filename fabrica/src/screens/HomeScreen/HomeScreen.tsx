@@ -39,7 +39,13 @@ function HomeScreen() {
           <Card
             title={'Quem pode ser atendido pela DPDF?'}
             icon={<Ionicons name="people-outline" size={32} color="black" />}
-            destination={'Settings'}
+            destination={'Served'}
+          />
+
+          <Card
+            title={'login'}
+            icon={<Ionicons name="people-outline" size={32} color="black" />}
+            destination={'Login'}
           />
 
           <Card

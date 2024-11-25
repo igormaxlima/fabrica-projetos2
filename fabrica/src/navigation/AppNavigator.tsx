@@ -8,16 +8,18 @@ import {
   DocumentsScreen,
   HomeScreen,
   LocationsNearScreen,
-  SettingsScreen,
+  LoginScreen,
+  ServedScreen,
 } from '../screens'
 
 export type RootStackParamList = {
   Home: undefined
-  Settings: undefined
+  Served: undefined
   LocationsNear: undefined
   Chat: undefined
   Documents: undefined
   DefensoriasLocationInfo: undefined
+  Login: undefined
 }
 
 const Stack = createNativeStackNavigator()
@@ -31,11 +33,19 @@ function AppNavigator() {
           component={HomeScreen}
           options={{ headerShown: false }}
         />
+
         <Stack.Screen
-          name="Settings"
-          component={SettingsScreen}
-          // options={{ headerShown: false }}
+          name="Served"
+          component={ServedScreen}
+          options={{
+            headerTitle: 'Quem pode ser atentido?',
+            headerStyle: { backgroundColor: '#006842' },
+            headerTintColor: '#FFFFFF',
+            headerBackTitleVisible: false,
+            headerShadowVisible: true,
+          }}
         />
+
         <Stack.Screen
           name="LocationsNear"
           component={LocationsNearScreen}
@@ -81,6 +91,11 @@ function AppNavigator() {
             // headerBackTitleVisible: false,
             headerShadowVisible: true,
           }}
+        />
+        <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>
