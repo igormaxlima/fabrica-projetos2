@@ -37,18 +37,6 @@ function HomeScreen() {
           />
 
           <Card
-            title={'Quem pode ser atendido pela DPDF?'}
-            icon={<Ionicons name="people-outline" size={32} color="black" />}
-            destination={'Served'}
-          />
-
-          <Card
-            title={'login'}
-            icon={<Ionicons name="people-outline" size={32} color="black" />}
-            destination={'Login'}
-          />
-
-          <Card
             title={'Defensorias perto de mim'}
             icon={<Ionicons name="location-outline" size={32} color="black" />}
             destination={'LocationsNear'}
@@ -60,6 +48,12 @@ function HomeScreen() {
               <Ionicons name="document-text-outline" size={32} color="black" />
             }
             destination={'Documents'}
+          />
+
+          <Card
+            title={'Quem pode ser atendido pela DPDF?'}
+            icon={<Ionicons name="people-outline" size={32} color="black" />}
+            destination={'Served'}
           />
 
           <Contacts />

@@ -33,6 +33,10 @@ function LoginScreen() {
     )
   }
 
+  const isFormValid = () => {
+    return email !== '' && cpf !== '' && password !== ''
+  }
+
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <LinearGradient
@@ -84,8 +88,22 @@ function LoginScreen() {
               />
             </View>
 
-            <TouchableOpacity style={styles.button} onPress={handleLogin}>
-              <Text style={styles.buttonText}>LOGIN</Text>
+            <TouchableOpacity
+              style={[
+                styles.button,
+                { backgroundColor: isFormValid() ? '#326266' : '#cccccc' },
+              ]}
+              onPress={handleLogin}
+              disabled={!isFormValid()}
+            >
+              <Text
+                style={[
+                  styles.buttonText,
+                  { color: isFormValid() ? '#fff' : '#666666' },
+                ]}
+              >
+                LOGIN
+              </Text>
             </TouchableOpacity>
 
             <TouchableOpacity onPress={handleGovBrLogin}>
@@ -131,8 +149,8 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 50,
     borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 8,
+    borderColor: '#333',
+    borderRadius: 10,
     paddingHorizontal: 10,
     fontSize: 16,
     backgroundColor: '#fff',
@@ -140,7 +158,6 @@ const styles = StyleSheet.create({
   button: {
     width: '90%',
     height: 50,
-    backgroundColor: '#B8B8B8',
     borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',
@@ -148,7 +165,6 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 16,
-    color: '#fff',
     fontWeight: 'bold',
   },
   linkText: {

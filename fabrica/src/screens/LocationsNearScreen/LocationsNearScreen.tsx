@@ -20,8 +20,8 @@ function LocationsNearScreen() {
       <Map
         initialRegion={{
           ...currentLocation,
-          latitudeDelta: 0.03,
-          longitudeDelta: 0.03,
+          latitudeDelta: 0.05,
+          longitudeDelta: 0.05,
         }}
         markers={MOCK_DEFENSORIAS}
         focusButtonName="Minha Localização"
