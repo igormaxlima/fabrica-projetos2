@@ -9,7 +9,11 @@ import {
   ScrollView,
 } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
-import { Defensorias, MOCK_DEFENSORIAS } from '../../types/defensoriasLocation'
+import {
+  Defensorias,
+  MOCK_DEFENSORIAS,
+  MOCK_SERVICES,
+} from '../../types/defensoriasLocation'
 import Map from '../../components/Map'
 import { MarkerData } from '../../components/Map/Map'
 import GeralInformation from './components/GeralInformation'
@@ -21,6 +25,7 @@ function DefensoriasLocationInfoScreen() {
   const [activeTab, setActiveTab] = useState<'informations' | 'map'>(
     'informations'
   )
+  const [selectedService, setSelectedService] = useState<string | null>(null)
 
   const openModal = (defensoria: Defensorias) => {
     setSelectedDefensoria(defensoria)
@@ -32,6 +37,15 @@ function DefensoriasLocationInfoScreen() {
     setSelectedDefensoria(null)
     setActiveTab('informations')
   }
+
+  const filterDefensoriasByService = (serviceName: string | null) => {
+    if (!serviceName) return MOCK_DEFENSORIAS
+    return MOCK_DEFENSORIAS.filter((defensoria) =>
+      defensoria.services?.some((service) => service.name === serviceName)
+    )
+  }
+
+  const filteredDefensorias = filterDefensoriasByService(selectedService)
 
   const renderDefensoriaCard = ({ item }: { item: Defensorias }) => {
     const formattedName = item.name.replace('Defensoria Pública do DF - ', '')
@@ -85,8 +99,39 @@ function DefensoriasLocationInfoScreen() {
         Clique em qual núcleo deseja receber mais informações:
       </Text>
 
+      <ScrollView
+        horizontal
+        style={styles.horizontalScroll}
+        contentContainerStyle={{ alignItems: 'center' }}
+      >
+        {MOCK_SERVICES.map((service, index) => (
+          <TouchableOpacity
+            key={index}
+            style={[
+              styles.serviceButton,
+              selectedService === service.name && styles.activeServiceButton,
+            ]}
+            onPress={() =>
+              setSelectedService(
+                selectedService === service.name ? null : service.name
+              )
+            }
+          >
+            <Text
+              style={[
+                styles.serviceButtonText,
+                selectedService === service.name &&
+                  styles.activeServiceButtonText,
+              ]}
+            >
+              {service.name}
+            </Text>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
+
       <ScrollView contentContainerStyle={styles.scrollContainer}>
-        {MOCK_DEFENSORIAS.map((defensoria, index) => (
+        {filteredDefensorias.map((defensoria, index) => (
           <View key={index} style={styles.cardContainer}>
             {renderDefensoriaCard({ item: defensoria })}
           </View>
@@ -242,5 +287,30 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
     paddingTop: 20,
+  },
+  horizontalScroll: {
+    flexDirection: 'row',
+    marginVertical: 15,
+    paddingHorizontal: 10,
+    maxHeight: 60,
+    minHeight: 60,
+  },
+  serviceButton: {
+    marginRight: 10,
+    marginBottom: 15,
+    backgroundColor: '#ddd',
+    padding: 15,
+    borderRadius: 20,
+  },
+  activeServiceButton: {
+    backgroundColor: '#006842',
+  },
+  serviceButtonText: {
+    color: '#000',
+    fontSize: 14,
+  },
+  activeServiceButtonText: {
+    color: '#fff',
+    fontWeight: 'bold',
   },
 })
