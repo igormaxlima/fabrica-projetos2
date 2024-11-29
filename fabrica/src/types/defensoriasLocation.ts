@@ -360,6 +360,10 @@ export const MOCK_DEFENSORIAS: Defensorias[] = [
       {
         name: "Ação de Alimentos",
         documents: ["Certidão de nascimento do filho", "Comprovante de rendimentos do alimentante", "Comprovante de residência"]
+      },
+      {
+        name: "Ação Civil Pública",
+        documents: ["Certidão de nascimento do filho", "Comprovante de rendimentos do alimentante", "Comprovante de residência"]
       }
     ],
     hour: "de segunda a sexta-feira, das 12h às 18h (dias úteis)",
@@ -467,35 +471,122 @@ export const MOCK_DEFENSORIAS: Defensorias[] = [
 export const MOCK_SERVICES: Servicos[] = [
   {
     name: "Ação de Divórcio",
-    documents: ["Certidão de casamento", "Documentos pessoais do cônjuge", "Comprovante de residência"],
+    documents: [
+      "Certidão de casamento",
+      "Documentos pessoais do cônjuge",
+      "Comprovante de residência",
+      "RG e CPF das partes (requerente e cônjuge)",
+      "Certidão de casamento atualizada (até 90 dias)",
+      "Comprovante de endereço",
+      "Certidão de nascimento dos filhos (se houver)",
+      "Declaração de hipossuficiência financeira",
+      "Comprovantes de bens do casal (imóveis, veículos, contas bancárias)",
+      "Declaração de renda das partes",
+      "Provas de separação de fato (se aplicável)"
+    ]
   },
   {
     name: "Ação de Alimentos",
-    documents: ["Certidão de nascimento do filho", "Comprovante de rendimentos do alimentante", "Comprovante de residência"],
+    documents: [
+      "Certidão de nascimento do filho",
+      "Comprovante de rendimentos do alimentante",
+      "Comprovante de residência",
+      "RG e CPF do responsável e do alimentado",
+      "Certidão de nascimento do alimentado (menor de idade)",
+      "Comprovante de endereço",
+      "Declaração de hipossuficiência financeira",
+      "Comprovantes de gastos (educação, saúde, moradia, etc.)",
+      "Comprovantes de renda do alimentante (se disponíveis)",
+      "Comprovantes de comunicação ou tentativa de acordo extrajudicial"
+    ]
   },
   {
     name: "Ação de Guarda",
-    documents: ["Certidão de nascimento do filho", "Comprovante de residência", "Documentos pessoais dos pais"],
+    documents: [
+      "Certidão de nascimento do filho",
+      "Comprovante de residência",
+      "Documentos pessoais dos pais",
+      "RG e CPF do requerente",
+      "Certidão de nascimento da criança ou adolescente",
+      "Comprovante de endereço",
+      "Declaração de hipossuficiência financeira",
+      "Relatórios escolares ou médicos da criança",
+      "Provas de convivência com a criança",
+      "Testemunhas que possam atestar a relação e os cuidados"
+    ]
   },
   {
     name: "Pedido de Tutela",
-    documents: ["Documentos pessoais do requerente", "Relatório médico", "Comprovante de residência"],
+    documents: [
+      "Documentos pessoais do requerente",
+      "Relatório médico",
+      "Comprovante de residência",
+      "RG e CPF do requerente",
+      "Certidão de nascimento da criança ou adolescente",
+      "Comprovante de endereço",
+      "Documentos que provem a incapacidade dos pais ou responsáveis legais",
+      "Declaração de hipossuficiência financeira",
+      "Provas de convivência e cuidado",
+      "Relatórios médicos ou psicológicos, se aplicável"
+    ]
   },
   {
     name: "Violência Doméstica",
-    documents: ["Documento pessoal do réu", "Registro da ocorrência", "Provas relacionadas"],
+    documents: [
+      "Documento pessoal do réu",
+      "Registro da ocorrência",
+      "Provas relacionadas",
+      "RG e CPF da vítima",
+      "Boletim de ocorrência (se já registrado)",
+      "Comprovante de endereço",
+      "Fotografias ou exames médicos que comprovem agressões",
+      "Testemunhas",
+      "Relatórios médicos ou psicológicos (se houver)"
+    ]
   },
   {
-    name: "Ação Cívil Pública",
-    documents: ["Documento do autor", "Sentença anterior", "Provas anexas"],
+    name: "Ação Civil Pública",
+    documents: [
+      "Documento do autor",
+      "Sentença anterior",
+      "Provas anexas",
+      "Documentos que demonstrem a legitimidade do pedido",
+      "Provas relacionadas ao interesse coletivo ou difuso",
+      "Comprovante de endereço do representante",
+      "Abaixo-assinados ou manifestos populares",
+      "Documentos técnicos (laudos, pareceres, etc.)",
+      "Relatórios ou notícias relacionadas ao caso"
+    ]
   },
   {
     name: "Defesa Criminal",
-    documents: ["Documento pessoal", "Relatório do caso", "Provas anexas"],
+    documents: [
+      "Documento pessoal",
+      "Relatório do caso",
+      "Provas anexas",
+      "RG e CPF do réu",
+      "Comprovante de endereço",
+      "Certidão ou auto de prisão em flagrante (se aplicável)",
+      "Testemunhas de defesa",
+      "Provas que desqualifiquem a acusação",
+      "Relatórios médicos ou psicológicos, se relevante"
+    ]
   },
   {
     name: "Ação de Usucapião",
-    documents: ["Certidão de nascimento", "Comprovante de residência", "Documentos pessoais"],
-  },
-
+    documents: [
+      "Certidão de nascimento",
+      "Comprovante de residência",
+      "Documentos pessoais",
+      "RG e CPF do requerente",
+      "Certidão de nascimento ou casamento",
+      "Comprovante de residência",
+      "Documentos que comprovem a posse e o tempo de ocupação (ex.: contas antigas)",
+      "Declaração de hipossuficiência financeira",
+      "Planta ou croqui do imóvel",
+      "Fotografias do imóvel e da área ocupada",
+      "Testemunhas que confirmem a posse",
+      "Certidões negativas de débitos fiscais do imóvel"
+    ]
+  }
 ];

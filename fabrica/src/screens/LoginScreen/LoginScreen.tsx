@@ -56,10 +56,10 @@ function LoginScreen() {
             />
 
             <View style={styles.inputGroup}>
-              <Text style={styles.label}>Email:</Text>
+              {/* <Text style={styles.label}>Email:</Text> */}
               <TextInput
                 style={styles.input}
-                placeholder="pessoa@gmail.com"
+                placeholder="Email"
                 keyboardType="email-address"
                 value={email}
                 onChangeText={setEmail}
@@ -67,10 +67,10 @@ function LoginScreen() {
             </View>
 
             <View style={styles.inputGroup}>
-              <Text style={styles.label}>CPF:</Text>
+              {/* <Text style={styles.label}>CPF:</Text> */}
               <TextInput
                 style={styles.input}
-                placeholder="000.000.000-00"
+                placeholder="CPF"
                 keyboardType="numeric"
                 value={cpf}
                 onChangeText={setCpf}
@@ -78,10 +78,10 @@ function LoginScreen() {
             </View>
 
             <View style={styles.inputGroup}>
-              <Text style={styles.label}>Senha:</Text>
+              {/* <Text style={styles.label}>Senha:</Text> */}
               <TextInput
                 style={styles.input}
-                placeholder="Digite sua senha..."
+                placeholder="Senha"
                 secureTextEntry
                 value={password}
                 onChangeText={setPassword}
@@ -106,9 +106,18 @@ function LoginScreen() {
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={handleGovBrLogin}>
-              <Text style={styles.linkText}>Entrar com gov.br</Text>
+            <TouchableOpacity
+              style={styles.govBrButton}
+              onPress={handleGovBrLogin}
+            >
+              <Text style={styles.govBrButtonText}>
+                Entrar com <Text style={styles.bold}>gov.br</Text>
+              </Text>
             </TouchableOpacity>
+            <Text style={styles.govBrDescription}>
+              Clique para <Text style={styles.bold}>criar</Text> ou{' '}
+              <Text style={styles.bold}>acessar</Text> sua conta gov.br
+            </Text>
           </ScrollView>
         </KeyboardAvoidingView>
       </LinearGradient>
@@ -172,5 +181,30 @@ const styles = StyleSheet.create({
     color: '#fff',
     marginTop: 15,
     textDecorationLine: 'underline',
+  },
+  govBrButton: {
+    width: '90%',
+    height: 40,
+    borderRadius: 30,
+    backgroundColor: '#3266CC',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 20,
+    paddingVertical: 10,
+    elevation: 2,
+  },
+  govBrButtonText: {
+    fontSize: 16,
+    color: '#fff',
+    fontWeight: '400',
+  },
+  govBrDescription: {
+    fontSize: 12,
+    color: '#fff',
+    textAlign: 'center',
+    marginTop: 5,
+  },
+  bold: {
+    fontWeight: 'bold',
   },
 })

@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View, Text, Linking, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, Text, TouchableOpacity, Linking } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 
 function Contacts() {
@@ -17,29 +17,31 @@ function Contacts() {
     <View style={styles.container}>
       <Text style={styles.title}>Contatos</Text>
 
-      <TouchableOpacity
-        style={styles.contactRow}
-        onPress={() => handlePress('phone', '129')}
-      >
-        <Ionicons name="call-outline" size={24} color="#006842" />
-        <Text style={styles.contactText}>Telefone: 129</Text>
-      </TouchableOpacity>
+      <View style={styles.grid}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handlePress('phone', '129')}
+        >
+          <Ionicons name="call-outline" size={32} color="#fff" />
+          <Text style={styles.label}>Telefone</Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity
-        style={styles.contactRow}
-        onPress={() => handlePress('instagram', 'defensoriadf')}
-      >
-        <Ionicons name="logo-instagram" size={24} color="#006842" />
-        <Text style={styles.contactText}>Instagram: @defensoriadf</Text>
-      </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handlePress('instagram', 'defensoriadf')}
+        >
+          <Ionicons name="logo-instagram" size={32} color="#fff" />
+          <Text style={styles.label}>Instagram</Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity
-        style={styles.contactRow}
-        onPress={() => handlePress('whatsapp', '5561993590015')}
-      >
-        <Ionicons name="logo-whatsapp" size={24} color="#006842" />
-        <Text style={styles.contactText}>WhatsApp: (061) 99359-0015</Text>
-      </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => handlePress('whatsapp', '5561993590015')}
+        >
+          <Ionicons name="logo-whatsapp" size={32} color="#fff" />
+          <Text style={styles.label}>WhatsApp</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   )
 }
@@ -49,7 +51,7 @@ export default Contacts
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    backgroundColor: '#fff',
+    backgroundColor: '#006842',
     borderRadius: 10,
     marginTop: 20,
     width: '90%',
@@ -59,18 +61,34 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#006842',
+    color: '#fff',
     marginBottom: 15,
+    textAlign: 'center',
   },
-  contactRow: {
+  grid: {
     flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 15,
+    justifyContent: 'space-between',
   },
-  contactText: {
-    marginLeft: 10,
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#333',
+  button: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 90,
+    height: 90,
+    backgroundColor: '#00A569',
+    borderRadius: 25,
+    borderColor: '#fff',
+    borderWidth: 2,
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
+  },
+  label: {
+    marginTop: 8,
+    fontSize: 14,
+    color: '#fff',
+    textAlign: 'center',
+    fontWeight: '700',
   },
 })
